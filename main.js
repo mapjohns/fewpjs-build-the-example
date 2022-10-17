@@ -3,9 +3,25 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+document.getElementById('modal').classList.add('hidden')
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById('modal').classList.add('hidden')
+  console.log("DOM loaded.")
+});
 
+function addListenerToHearts() {
+  let hearts = document.querySelectorAll('.like-glyph')
+  for (let i=0; i<hearts.length; i++) {
+    hearts[i].addEventListener("click", pootis)
+  }
+}
 
+addListenerToHearts()
+
+function pootis() {
+  console.log("POOTIS!")
+}
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
